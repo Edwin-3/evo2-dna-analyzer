@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧬 Evo 2 DNA Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧬 Evo 2 DNA Sequence Analyzer</h1>
+            <p>Analyze DNA sequences using state-of-the-art AI</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h2>Enter DNA Sequence</h2>
+                <div class="input-group">
+                    <textarea
+                        id="dnaSequence"
+                        placeholder="Enter DNA sequence (A, C, G, T only)..."
+                        maxlength="10000"
+                    ></textarea>
+                    <div class="input-controls">
+                        <button id="analyzeBtn" class="btn-primary">Analyze Sequence</button>
+                        <button id="sampleBtn" class="btn-secondary">Load Sample</button>
+                        <button id="clearBtn" class="btn-secondary">Clear</button>
+                    </div>
+                </div>
+                <div class="sequence-info">
+                    <span id="sequenceLength">Length: 0</span>
+                    <span id="sequenceValid" class="valid">Valid sequence</span>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2>Analysis Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Basic Information</h3>
+                        <div class="result-item">
+                            <label>Sequence Length:</label>
+                            <span id="resultLength"></span>
+                        </div>
+                        <div class="result-item">
+                            <label>GC Content:</label>
+                            <span id="resultGC"></span>
+                        </div>
+                        <div class="result-item">
+                            <label>Processing Time:</label>
+                            <span id="resultTime"></span>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <h3>Evo 2 Analysis</h3>
+                        <div class="result-item">
+                            <label>Likelihood Score:</label>
+                            <span id="resultScore"></span>
+                        </div>
+                        <div class="result-item">
+                            <label>Functional Prediction:</label>
+                            <span id="resultFunction"></span>
+                        </div>
+                        <div class="result-item">
+                            <label>Conservation Score:</label>
+                            <span id="resultConservation"></span>
+                        </div>
+                        <div class="result-item">
+                            <label>Mutations Detected:</label>
+                            <span id="resultMutations"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing DNA sequence...</p>
+            </div>
+        </main>
+
+        <footer>
+            <div class="status" id="status">
+                <span class="status-indicator" id="statusIndicator"></span>
+                <span id="statusText">Checking connection...</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
